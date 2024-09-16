@@ -14,3 +14,4 @@ jobs:
         run: |
           echo "Hello, world!"
           echo "Hello, everyone!"
+          echo "Current date and time: $(date)"
