@@ -1,34 +1,35 @@
 package org.example;
+import Zoo.*;
 
 public class Main {
     public static void main(String[] args) {
-        Horse horse=new Horse();
         Camel camel=new Camel();
-        Eagle eagle=new Eagle();
         Dolphin dolphin=new Dolphin();
+        Eagle eagle =new Eagle();
+        Horse horse=new Horse();
         Tiger tiger=new Tiger();
-        Zoo.Move(horse);
-        Zoo.Move(camel);
-        Zoo.Move(eagle);
-        Zoo.Move(dolphin);
-        Zoo.Move(tiger);
-        Food lamb=new Food("meat","lamb");
-        Food fish=new Food("meat","fish");
-        Food grass=new Food("grass","grass");
-        Zoo.Eating(horse,lamb);
-        Zoo.Eating(horse,fish);
-        Zoo.Eating(horse,grass);
-        Zoo.Eating(camel,lamb);
-        Zoo.Eating(camel,fish);
-        Zoo.Eating(camel,grass);
-        Zoo.Eating(eagle,lamb);
-        Zoo.Eating(eagle,fish);
-        Zoo.Eating(eagle,grass);
-        Zoo.Eating(dolphin,lamb);
-        Zoo.Eating(dolphin,fish);
-        Zoo.Eating(dolphin,grass);
-        Zoo.Eating(tiger,lamb);
-        Zoo.Eating(tiger,fish);
-        Zoo.Eating(tiger,grass);
+        Grass grass=new Grass("grass");
+        Meat beef=new Meat("beef");
+        Meat fish=new Meat("fish");
+        camel.IsFood(grass);
+        camel.IsFood(beef);
+        camel.IsFood(fish);
+        camel.walk();
+        dolphin.IsFood(grass);
+        dolphin.IsFood(beef);
+        dolphin.IsFood(fish);
+        dolphin.swim();
+        eagle.IsFood(fish);
+        eagle.IsFood(beef);
+        eagle.IsFood(grass);
+        eagle.fly();
+        horse.IsFood(fish);
+        horse.IsFood(beef);
+        horse.IsFood(grass);
+        horse.walk();
+        tiger.IsFood(fish);
+        tiger.IsFood(grass);
+        tiger.IsFood(beef);
+        tiger.walk();
     }
 }
