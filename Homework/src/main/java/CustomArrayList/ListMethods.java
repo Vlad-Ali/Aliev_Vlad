@@ -1,7 +1,7 @@
 package CustomArrayList;
 
 /**
- * @param <E>
+ * @param <E>  the type of elements in this list
  */
 public interface ListMethods<E> {
     /**Inserts the element at the specified position in this list.
