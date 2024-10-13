@@ -1,7 +1,5 @@
 package org.example;
 
-import SortStructure.*;
-
 import java.util.*;
 
 public class Main {
