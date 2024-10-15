@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MergeSortTest {
     @Test
-    void shouldThrowNullPointerExceptionIfArrayListIsNull() {
-        assertThrows(NullPointerException.class, () -> new MergeSort().Sort(null));
+    void shouldThrowIllegalArgumentExceptionIfArrayListIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> new MergeSort().Sort(null));
     }
 
     @Test

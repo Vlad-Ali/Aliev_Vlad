@@ -4,19 +4,20 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SortStructureTest {
     @Test
-    void BubbleSortshouldThrowNullPointerExceptionIfArrayListIsNull() {
-        assertThrows(NullPointerException.class, () -> new SortStructure(List.of(new BubbleSort())).sort(null, new BubbleSort()));
+    void BubbleSortshouldThrowIllegalArgumentExceptionIfArrayListIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> new SortStructure(List.of(new BubbleSort())).sort(null, new BubbleSort()));
     }
 
     @Test
-    void NoBubbleSortshouldThrowNoClassDefFoundError() {
+    void NoBubbleSortshouldThrowNoSuchElementException() {
         List<Integer> arr = List.of(1, 2);
-        assertThrows(NoClassDefFoundError.class, () -> new SortStructure(List.of(new MergeSort())).sort(arr, new BubbleSort()));
+        assertThrows(NoSuchElementException.class, () -> new SortStructure(List.of(new MergeSort())).sort(arr, new BubbleSort()));
     }
 
     @Test
@@ -35,14 +36,14 @@ class SortStructureTest {
     }
 
     @Test
-    void MergeSortshouldThrowNullPointerExceptionIfArrayListIsNull() {
-        assertThrows(NullPointerException.class, () -> new SortStructure(List.of(new BubbleSort(), new MergeSort())).sort(null, new MergeSort()));
+    void MergeSortshouldThrowIllegalArgumentExceptionIfArrayListIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> new SortStructure(List.of(new BubbleSort(), new MergeSort())).sort(null, new MergeSort()));
     }
 
     @Test
-    void NoMergeSortshouldThrowNoClassDefFoundError() {
+    void NoMergeSortshouldThrowNoSuchElementException() {
         List<Integer> arr = List.of(1, 2);
-        assertThrows(NoClassDefFoundError.class, () -> new SortStructure(List.of(new BubbleSort())).sort(arr, new MergeSort()));
+        assertThrows(NoSuchElementException.class, () -> new SortStructure(List.of(new BubbleSort())).sort(arr, new MergeSort()));
     }
 
     @Test

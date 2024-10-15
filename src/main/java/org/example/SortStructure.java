@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class SortStructure {
     private final List<SortStrategy> sortStrategies;
@@ -16,10 +17,11 @@ public class SortStructure {
                 try {
                     return sortStrategy.Sort(arr);
                 }
-                catch (NullPointerException e){
+                catch (IllegalArgumentException e){
                     throw e;
                 }
                 catch (IllegalStateException e){
+                    //keep going
                 }
             }
         }
@@ -27,7 +29,7 @@ public class SortStructure {
             throw new IllegalStateException("List size " + arr.size() + " is too large");
         }
         else{
-            throw new NoClassDefFoundError(sortStrategy.type()+" is not found");
+            throw new NoSuchElementException(sortStrategy.type()+" is not found");
         }
     }
 }

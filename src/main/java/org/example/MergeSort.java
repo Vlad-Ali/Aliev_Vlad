@@ -12,12 +12,12 @@ public class MergeSort implements SortStrategy {
     @Override
     public List<Integer> Sort(List<Integer> arrayList) {
         if (arrayList == null) {
-            throw new NullPointerException("Can't sort , because List is null");
+            throw new IllegalArgumentException("Can't sort, because List is null");
         }
         if (arrayList.size() > MAX_SIZE) {
             throw new IllegalStateException("List size " + arrayList.size() + " is too large");
         }
-        List<Integer> arrayList1 = new ArrayList<>(copyOf(arrayList));
+        List<Integer> arrayList1=new ListCopy().listcopy(arrayList);
         Collections.sort(arrayList1);
         return arrayList1;
     }

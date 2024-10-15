@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class BubbleSortTest {
 
     @Test
-    void shouldThrowNullPointerExceptionIfArrayListIsNull() {
-        assertThrows(NullPointerException.class, () -> new BubbleSort().Sort(null));
+    void shouldThrowIllegalArgumentExceptionIfArrayListIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> new BubbleSort().Sort(null));
     }
 
     @Test
